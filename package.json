@@ -17,9 +17,16 @@
   "author": "Remilekun Salami",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^2.5.0"
+    "@emotion/react": "^11.9.0",
+    "lodash.merge": "^4.6.2",
+    "parcel": "^2.5.0",
+    "react": "^18.1.0",
+    "react-toastify": "^9.0.1",
+    "tinycolor2": "^1.4.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.0",
+    "@emotion/babel-plugin": "^11.9.2",
     "@parcel/packager-ts": "2.5.0",
     "@parcel/transformer-typescript-types": "2.5.0",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
@@ -38,6 +45,7 @@
     "lint-staged": ">=10",
     "prettier": "^2.6.2",
     "prettierrc": "^0.0.0-5",
+    "@types/react": "^18.0.9",
     "typescript": "^4.7.2"
   },
   "lint-staged": {

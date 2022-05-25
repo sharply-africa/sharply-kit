@@ -3,3 +3,4 @@
 .parcel-cache
 build
 dist
+yarn-error.log
