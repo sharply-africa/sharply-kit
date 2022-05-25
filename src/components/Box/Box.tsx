@@ -1,5 +1,5 @@
 // ln-95-97 source: https://github.com/emotion-js/emotion/issues/1272#issuecomment-517163194
-
+import React, { forwardRef } from 'react';
 import styled from '@emotion/styled';
 import {
   background,
@@ -84,7 +84,7 @@ export const systemProps = compose(
   typography,
 );
 
-const Box = styled('div', {
+const BoxComponent = styled('div', {
   shouldForwardProp,
 })(
   { boxSizing: 'border-box', margin: 0, minWidth: 0, padding: 0 },
@@ -92,8 +92,8 @@ const Box = styled('div', {
   getVariant,
   systemProps,
   sx,
-) as React.ComponentType<
-  Omit<React.HTMLAttributes<HTMLDivElement>, keyof BoxProps> & BoxProps
->;
+);
+
+const Box = forwardRef((p: BoxProps, ref) => <BoxComponent ref={ref} {...p} />);
 
 export default Box;
