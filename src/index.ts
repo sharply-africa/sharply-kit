@@ -1,1 +1,3 @@
-export const add = (a: number, b: number): number => a + b;
+import ThemeProvider from '~src/context/ThemeContext';
+
+export default ThemeProvider;
