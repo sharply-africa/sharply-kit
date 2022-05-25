@@ -6,6 +6,7 @@ module.exports = {
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   parserOptions: {
     tsconfigRootDir: __dirname,
