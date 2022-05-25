@@ -19,5 +19,6 @@ module.exports = {
   },
   rules: {
     'import/extensions': 0,
+    '@typescript-eslint/no-explicit-any': 0,
   },
 };

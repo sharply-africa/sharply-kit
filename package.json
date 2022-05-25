@@ -22,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@types/react-toastify": "^4.1.0",
     "lodash.merge": "^4.6.2",
     "parcel": "^2.5.0",
@@ -44,6 +45,8 @@
     "@storybook/testing-library": "^0.0.11",
     "@types/react": "^18.0.9",
     "@types/styled-system": "^5.1.15",
+    "@types/styled-system__css": "^5.0.16",
+    "@types/styled-system__should-forward-prop": "^5.1.2",
     "@types/tinycolor2": "^1.4.3",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
