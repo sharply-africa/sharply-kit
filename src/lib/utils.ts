@@ -1,36 +1,23 @@
-import tinycolor from 'tinycolor2';
+// source: https://github.com/mantinedev/mantine/blob/master/src/mantine-hooks/src/use-merged-ref/use-merged-ref.ts
 
-const getPropName = (prop: string) => {
-  return prop.replace('var(', '').replace(')', '');
-};
+import React from 'react';
 
-export const getColorHex = (color: string) => {
-  if (typeof window !== 'undefined' && color) {
-    const root = document.querySelector(':root');
-    const rs = getComputedStyle(root);
-    const propName = getPropName(color);
-    const hexColor = color.startsWith('var')
-      ? rs.getPropertyValue(propName)
-      : color;
+type Ref<T> = React.Dispatch<React.SetStateAction<T>> | React.ForwardedRef<T>;
 
-    const newTinyColor = tinycolor(hexColor);
-    newTinyColor.lighten(30);
-    return newTinyColor.toHexString();
+export function assignRef<T = any>(
+  ref: React.ForwardedRef<T>,
+  value: T | null,
+) {
+  if (typeof ref === 'function') {
+    ref(value);
+  } else if (typeof ref === 'object' && ref !== null && 'current' in ref) {
+    // eslint-disable-next-line no-param-reassign
+    ref.current = value;
   }
-  return color;
-};
+}
 
-export const mergeRefs = (...refs: any[]) => {
-  const filteredRefs = refs.filter(Boolean);
-  if (!filteredRefs.length) return null;
-  if (filteredRefs.length === 0) return filteredRefs[0];
-  return (inst) => {
-    for (const ref of filteredRefs) {
-      if (typeof ref === 'function') {
-        ref(inst);
-      } else if (ref) {
-        ref.current = inst;
-      }
-    }
+export function mergeRefs<T = any>(...refs: Ref<T>[]) {
+  return (node: T | null) => {
+    refs.forEach((ref) => assignRef(ref, node));
   };
-};
+}

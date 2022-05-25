@@ -4,11 +4,24 @@ import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 import merge from 'lodash.merge';
 import CSSReset from '~src/resets/CSSReset';
 import ToastReset from '~src/resets/ToastReset';
-import defaultTheme from '~src/theme';
+import defaultTheme, { ITheme } from '~src/theme';
 
-export const ThemeContext = React.createContext({});
+interface ThemeProviderProps {
+  children: React.ReactNode;
+  googleMapsKey?: string;
+  resetCSS?: boolean;
+  theme?: ITheme;
+}
 
-const ThemeProvider = (props) => {
+export interface ThemeContextProps {
+  googleMapsKey: string;
+  theme: ITheme;
+  updateTheme(theme: ITheme): void;
+}
+
+export const ThemeContext = React.createContext({} as ThemeContextProps);
+
+const ThemeProvider = (props: ThemeProviderProps): JSX.Element => {
   const {
     children,
     googleMapsKey = '',
