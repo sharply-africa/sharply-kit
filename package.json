@@ -1,7 +1,7 @@
 {
   "name": "sharply-ui-kit",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Sharply africa web ui kit",
   "source": "src/index.ts",
   "main": "dist/index.js",
