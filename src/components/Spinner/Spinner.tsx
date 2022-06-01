@@ -12,17 +12,17 @@ const spin = keyframes({
 });
 
 interface SpinnerProps extends BoxProps {
-  color: string;
-  emptyColor: string;
-  size: string | number;
-  speed: string | number;
-  styles: React.CSSProperties;
-  thickness: string;
+  color?: string;
+  emptyColor?: string;
+  size?: string | number;
+  speed?: string | number;
+  styles?: React.CSSProperties;
+  thickness?: string;
 }
 
 const Spinner = forwardRef((props: SpinnerProps, ref) => {
   const {
-    color,
+    color = 'primary',
     emptyColor = 'transparent',
     size = '2.5rem',
     speed = '0.45s',
