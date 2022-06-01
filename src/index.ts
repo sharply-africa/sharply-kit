@@ -1,4 +1,5 @@
 import ThemeProvider from '~src/context/ThemeContext';
+import { BackButton, Button, CloseButton } from './components/Button';
 import { Badge } from './components/Badge';
 import { Box } from './components/Box';
 import { Card } from './components/Card';
@@ -20,10 +21,13 @@ import { Textarea } from './components/Textarea';
 
 export {
   ThemeProvider,
+  BackButton,
   Badge,
   Box,
+  Button,
   Card,
   Checkbox,
+  CloseButton,
   DatePicker,
   FormError,
   FormGroup,

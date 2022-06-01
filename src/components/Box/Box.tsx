@@ -52,11 +52,12 @@ export interface BoxProps
     TypographyProps {
   __css?: CSSProperties | React.CSSProperties | any;
   as?: React.ElementType<any>;
-  className?: ClassNamesProps;
   children?: Children;
+  className?: ClassNamesProps;
+  disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
   sx?: CSSProperties;
   tx?: string;
-  onClick?: React.MouseEventHandler<HTMLElement>;
   variant?: string;
 }
 
