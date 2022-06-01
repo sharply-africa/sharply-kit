@@ -11,7 +11,7 @@ interface RadioProps extends BoxProps {
   size?: string;
   subtitle?: string;
   subtitleProps?: TextProps;
-  sx?: React.CSSProperties;
+  sx?: BoxProps['sx'];
   title?: string;
   titleProps?: TextProps;
 }
