@@ -1,4 +1,5 @@
 import ThemeProvider from '~src/context/ThemeContext';
+import { Accordion } from './components/Accordion';
 import { BackButton, Button, CloseButton } from './components/Button';
 import { Badge } from './components/Badge';
 import { Box } from './components/Box';
@@ -24,6 +25,7 @@ import { Textarea } from './components/Textarea';
 
 export {
   ThemeProvider,
+  Accordion,
   BackButton,
   Badge,
   Box,
