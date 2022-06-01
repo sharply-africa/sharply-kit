@@ -24,7 +24,6 @@ import {
   ShadowProps,
   space,
   SpaceProps,
-  StylesProps,
   typography,
   TypographyProps,
 } from 'styled-system';
@@ -35,6 +34,7 @@ import {
   createShouldForwardProp,
   props,
 } from '@styled-system/should-forward-prop';
+import { Children } from '~src/types/base';
 
 export interface BoxProps
   extends BackgroundProps,
@@ -53,12 +53,7 @@ export interface BoxProps
   __css?: CSSProperties | React.CSSProperties | any;
   as?: React.ElementType<any>;
   className?: ClassNamesProps;
-  children?:
-    | string
-    | number
-    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
-    | React.ReactFragment
-    | React.ReactPortal;
+  children?: Children;
   sx?: CSSProperties;
   tx?: string;
   variant?: string;
