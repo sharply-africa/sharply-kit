@@ -16,13 +16,13 @@ const IconWrapper = styled(Box)<{ fill?: string }>`
 
 export interface ButtonProps extends BoxProps {
   colorScheme?: keyof IThemeFoundationSpace;
-  defaultRightIcon?: boolean;
   iconSpacing?: number;
   isDisabled?: boolean;
   isFullWidth?: boolean;
   isLoading?: boolean;
   leftIcon?: Children;
   rightIcon?: Children;
+  showArrowIcon?: boolean;
   textColor?: keyof IThemeFoundationSpace;
 }
 
@@ -30,12 +30,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     children,
     colorScheme = 'primary',
-    defaultRightIcon,
     iconSpacing = 4,
     isDisabled,
     isLoading,
     leftIcon,
     rightIcon,
+    showArrowIcon,
     textColor,
     variant = 'solid',
     ...rest
@@ -51,7 +51,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       : theme.colors.white;
 
   const wrapperWithIconStyle =
-    leftIcon || rightIcon || defaultRightIcon
+    leftIcon || rightIcon || showArrowIcon
       ? {
           justifyContent: isLoading ? 'center' : 'space-between',
         }
@@ -67,7 +67,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 
     if (rightIcon) {
       return <IconWrapper {...wrapperProps}>{rightIcon}</IconWrapper>;
-    } else if (defaultRightIcon) {
+    } else if (showArrowIcon) {
       return (
         <IconWrapper {...wrapperProps}>
           <ArrowRight />
@@ -86,7 +86,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       disabled={Boolean(isDisabled || isLoading)}
       {...props}
       __css={{
-        alignItems: 'center',
         appearance: 'none',
         bg: color,
         border: 0,
