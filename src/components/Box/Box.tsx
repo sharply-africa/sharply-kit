@@ -24,10 +24,13 @@ import {
   ShadowProps,
   space,
   SpaceProps,
+  StylesProps,
   typography,
   TypographyProps,
 } from 'styled-system';
-import css, { get } from '@styled-system/css';
+import { ClassNamesProps } from '@emotion/react';
+
+import css, { CSSProperties, get } from '@styled-system/css';
 import {
   createShouldForwardProp,
   props,
@@ -47,11 +50,18 @@ export interface BoxProps
     ShadowProps,
     SpaceProps,
     TypographyProps {
+  __css?: CSSProperties | React.CSSProperties | any;
   as?: React.ElementType<any>;
-  sx?: React.CSSProperties;
-  __css?: React.CSSProperties;
-  variant?: string;
+  className?: ClassNamesProps;
+  children?:
+    | string
+    | number
+    | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+    | React.ReactFragment
+    | React.ReactPortal;
+  sx?: CSSProperties;
   tx?: string;
+  variant?: string;
 }
 
 const shouldForwardProp = createShouldForwardProp([
