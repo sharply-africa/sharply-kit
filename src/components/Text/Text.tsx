@@ -1,7 +1,9 @@
 import React, { forwardRef } from 'react';
-import { Box } from '~src/components/Box';
+import { Box, BoxProps } from '~src/components/Box';
 
-const Text = forwardRef((props, ref) => (
+type TextProps = BoxProps;
+
+const Text = forwardRef<HTMLParagraphElement, TextProps>((props, ref) => (
   <Box ref={ref} tx="text" as="p" variant="text" {...props} />
 ));
 

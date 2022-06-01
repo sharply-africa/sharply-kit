@@ -1,8 +1,10 @@
 {
     "extends": "./tsconfig.json",
     "include": [
-      "src",
-      "dist/types.d.ts",
-      ".eslintrc.js"
-    ]
+      "./src",
+      "./dist/types.d.ts",
+      "./.eslintrc.js",
+      "./stories"
+    ],
+    "exclude": ["./.storybook"]
   }

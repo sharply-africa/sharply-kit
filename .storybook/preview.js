@@ -1,3 +1,6 @@
+import * as React from 'react';
+import { ThemeProvider } from '../dist';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -7,3 +10,15 @@ export const parameters = {
     },
   },
 };
+
+const withTheme = (Story, context) => {
+  return (
+    <ThemeProvider>
+      <div id="story-wrapper" style={{ minHeight: '100vh' }}>
+        <Story {...context} />
+      </div>
+    </ThemeProvider>
+  );
+};
+
+export const decorators = [withTheme];
