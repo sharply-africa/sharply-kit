@@ -4,7 +4,7 @@ import { Box, BoxProps } from '~src/components/Box';
 import { Text } from '~src/components/Text';
 import { Card } from '~src/components/Card';
 import { IThemeFoundationColors } from '~src/theme/theme';
-import { Children } from '~src/types/base';
+import { Children } from '~src/lib/utils';
 
 interface MenuCardProps extends BoxProps {
   icon?: Children;

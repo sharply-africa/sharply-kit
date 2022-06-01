@@ -1,0 +1,25 @@
+import React from 'react';
+import { Switch as SwitchComponent } from '../dist';
+
+export default {
+  title: 'Components/Form/Switch',
+  component: SwitchComponent,
+  argTypes: {
+    activeBackgroundColor: {
+      control: 'color',
+    },
+    inactiveBackgroundColor: {
+      control: 'color',
+    },
+    onChange: { action: 'onChange', control: null, defaultValue: console.log },
+  },
+};
+
+export const Switch = (args) => <SwitchComponent {...args} />;
+
+Switch.args = {
+  active: false,
+  isLoading: false,
+  subtitle: 'Lorem ipsum dolor sit amet',
+  title: 'Label',
+};

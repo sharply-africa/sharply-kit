@@ -4,6 +4,13 @@ import React from 'react';
 
 type Ref<T> = React.Dispatch<React.SetStateAction<T>> | React.ForwardedRef<T>;
 
+export type Children =
+  | string
+  | number
+  | React.ReactElement<any, string | React.JSXElementConstructor<any>>
+  | React.ReactFragment
+  | React.ReactPortal;
+
 export function assignRef<T = any>(
   ref: React.ForwardedRef<T>,
   value: T | null,
