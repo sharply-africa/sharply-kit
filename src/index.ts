@@ -22,6 +22,8 @@ import { Switch } from './components/Switch';
 import { TagsInput } from './components/TagsInput';
 import { Text } from './components/Text';
 import { Textarea } from './components/Textarea';
+import useTheme from './hooks/useTheme';
+import useToast from './hooks/useToast';
 
 export {
   ThemeProvider,
@@ -52,4 +54,6 @@ export {
   TagsInput,
   Text,
   Textarea,
+  useTheme,
+  useToast,
 };
