@@ -1,5 +1,6 @@
 {
-  "name": "sharply-kit",
+  "name": "sharply-ui-kit",
+  "private": true,
   "version": "1.0.0",
   "description": "Sharply africa web ui kit",
   "source": "src/index.ts",
@@ -17,6 +18,10 @@
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "parcel watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyeops/sharply-ui-kit.git"
   },
   "author": "Remilekun Salami",
   "license": "ISC",
