@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import ArrowLeft from '~src/assets/icons/arrow-left.svg';
+import { ArrowLeft } from '~src/components/Icons';
 import { Box, BoxProps } from '~src/components/Box';
 import { Text } from '~src/components/Text';
 import { Card } from '~src/components/Card';

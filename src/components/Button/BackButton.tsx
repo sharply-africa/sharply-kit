@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import ArrowLeft from '~src/assets/icons/arrow-left.svg';
+import { ArrowLeft } from '~src/components/Icons';
 import Button, { ButtonProps } from './Button';
 
 const BackButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {

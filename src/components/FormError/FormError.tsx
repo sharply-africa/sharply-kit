@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import CautionIcon from '~src/assets/icons/caution.svg';
+import { Caution } from '~src/components/Icons';
 import { Box, BoxProps } from '~src/components/Box';
 import { Stack } from '~src/components/Stack';
 import { Text } from '~src/components/Text';
@@ -31,7 +31,7 @@ const FormError = forwardRef((props: FormErrorProps, ref) => {
       {...props}
     >
       <Box sx={{ flexShrink: 0 }}>
-        <CautionIcon />
+        <Caution />
       </Box>
       <Text variant="errorText">{error}</Text>
     </Stack>

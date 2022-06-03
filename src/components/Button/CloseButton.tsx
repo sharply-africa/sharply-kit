@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import X from '~src/assets/icons/x.svg';
+import { X } from '~src/components/Icons';
 import Button, { ButtonProps } from './Button';
 
 const CloseButton = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {

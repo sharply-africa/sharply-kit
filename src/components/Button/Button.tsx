@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
 import tinycolor from 'tinycolor2';
-import ArrowRight from '~src/assets/icons/arrow-right.svg';
+import { ArrowRight } from '~src/components/Icons';
 import { Box, BoxProps } from '~src/components/Box';
 import { Spinner } from '~src/components/Spinner';
 import { IThemeFoundationSpace } from '~src/theme/theme';

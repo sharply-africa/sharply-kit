@@ -2,8 +2,7 @@ import React, { forwardRef, useMemo, useState } from 'react';
 import { Flex } from '~src/components/Flex';
 import { Text } from '~src/components/Text';
 import { Select } from '~src/components/Select';
-import CaretLeft from '~src/assets/icons/caret-left.svg';
-import CaretRight from '~src/assets/icons/caret-right.svg';
+import { CaretLeft, CaretRight } from '~src/components/Icons';
 import { useDidUpdate } from '~src/hooks/useDidUpdate';
 import { Control, Controls, Wrapper } from './StyledComponents';
 

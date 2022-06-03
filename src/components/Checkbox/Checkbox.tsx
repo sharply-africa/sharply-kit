@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import CheckmarkIcon from '~src/assets/icons/checkmark.svg';
+import { Checkmark } from '~src/components/Icons';
 import { Box, BoxProps } from '~src/components/Box';
 import { Spinner } from '~src/components/Spinner';
 import { Stack } from '~src/components/Stack';
@@ -77,7 +77,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
               width: size,
             }}
           >
-            {icon || <CheckmarkIcon />}
+            {icon || <Checkmark />}
           </Box>
         </Box>
       )}
