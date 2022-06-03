@@ -9,14 +9,15 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build:storybook": "build-storybook",
-    "build:tsc": "tsc -p .",
+    "build:tsc": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "build": "npm-run-all clean build:tsc copy:assets",
     "clean": "rimraf dist",
     "copy:assets": "cp -R  ./src/assets ./dist/assets",
     "dev": "npm-run-all --parallel watch storybook",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit --emitDeclarationOnly false  && eslint src/**/*.ts{,x}",
-    "prepare": "yarn build",
+    "postinstall": "patch-package",
+    "prepare": "yarn build --silent",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "rollup -c -w"
@@ -93,6 +94,7 @@
     "husky": ">=6",
     "lint-staged": ">=10",
     "npm-run-all": "^4.1.5",
+    "patch-package": "^6.4.7",
     "prettier": "^2.6.2",
     "prettierrc": "^0.0.0-5",
     "react": "^18.1.0",
@@ -111,6 +113,8 @@
     "rollup-plugin-terser": "^7.0.2",
     "styled-system": "^5.1.5",
     "tinycolor2": "^1.4.2",
+    "tsconfig-paths": "^4.0.0",
+    "tscpaths": "https://github.com/skyeops/tscpaths.git",
     "typescript": "4.5.2"
   },
   "lint-staged": {
