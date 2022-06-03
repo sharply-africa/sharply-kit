@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import { Box } from '~src/components/Box';
 
