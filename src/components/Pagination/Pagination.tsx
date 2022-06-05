@@ -1,9 +1,9 @@
 import React, { forwardRef, useMemo, useState } from 'react';
-import { Flex } from '~src/components/Flex';
-import { Text } from '~src/components/Text';
-import { Select } from '~src/components/Select';
-import { CaretLeft, CaretRight } from '~src/components/Icons';
-import { useDidUpdate } from '~src/hooks/useDidUpdate';
+import { Flex } from 'src/components/Flex';
+import { Text } from 'src/components/Text';
+import { Select } from 'src/components/Select';
+import { CaretLeft, CaretRight } from 'src/components/Icons';
+import { useDidUpdate } from 'src/hooks/useDidUpdate';
 import { Control, Controls, Wrapper } from './StyledComponents';
 
 interface PaginationProps {

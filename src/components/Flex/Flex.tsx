@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Box, BoxProps } from '~src/components/Box';
+import { Box, BoxProps } from 'src/components/Box';
 
 const Flex = styled(Box)<BoxProps>({
   display: 'flex',

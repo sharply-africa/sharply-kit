@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Box } from '~src/components/Box';
+import { Box } from 'src/components/Box';
 
 export const PhoneInputWrapper = styled(Box)`
   .react-tel-input {

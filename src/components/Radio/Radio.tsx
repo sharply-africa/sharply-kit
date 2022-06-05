@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
-import { Box, BoxProps } from '~src/components/Box';
-import { Spinner } from '~src/components/Spinner';
-import { Stack } from '~src/components/Stack';
-import { Text, TextProps } from '~src/components/Text';
+import { Box, BoxProps } from 'src/components/Box';
+import { Spinner } from 'src/components/Spinner';
+import { Stack } from 'src/components/Stack';
+import { Text, TextProps } from 'src/components/Text';
 
 interface RadioProps extends BoxProps {
   active?: boolean;

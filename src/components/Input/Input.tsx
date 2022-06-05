@@ -5,10 +5,10 @@ import React, { forwardRef } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import { usePlacesWidget } from 'react-google-autocomplete';
 import usePlacesService from 'react-google-autocomplete/lib/usePlacesAutocompleteService';
-import { Box, BoxProps } from '~src/components/Box';
-import useTheme from '~src/hooks/useTheme';
+import { Box, BoxProps } from 'src/components/Box';
+import useTheme from 'src/hooks/useTheme';
 import { PhoneInputWrapper } from './StyledComponents';
-import { mergeRefs } from '~src/lib';
+import { mergeRefs } from 'src/lib';
 
 type InputProps = React.HTMLProps<HTMLInputElement>;
 

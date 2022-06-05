@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Slide, ToastContainer } from 'react-toastify';
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
 import merge from 'lodash.merge';
-import CSSReset from '~src/resets/CSSReset';
-import ToastReset from '~src/resets/ToastReset';
-import defaultTheme, { ITheme } from '~src/theme';
+import CSSReset from 'src/resets/CSSReset';
+import ToastReset from 'src/resets/ToastReset';
+import defaultTheme, { ITheme } from 'src/theme';
 
 interface ThemeProviderProps {
   children: React.ReactNode;

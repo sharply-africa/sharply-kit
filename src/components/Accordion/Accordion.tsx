@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import { Box, BoxProps } from '~src/components/Box';
+import { Box, BoxProps } from 'src/components/Box';
 import { AccordionContext } from './AccordionContext';
 import AccordionHeader from './AccordionHeader';
 import AccordionContent from './AccordionContent';

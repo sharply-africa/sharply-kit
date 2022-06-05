@@ -18,8 +18,7 @@
     "lint": "tsc --noEmit --emitDeclarationOnly false  && eslint src/**/*.ts{,x}",
     "prepare": "yarn build --silent",
     "storybook": "start-storybook -p 6006",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "rollup -c -w"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

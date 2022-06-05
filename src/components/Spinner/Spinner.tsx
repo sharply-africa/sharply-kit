@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { keyframes } from '@emotion/react';
-import { Box, BoxProps } from '~src/components/Box';
+import { Box, BoxProps } from 'src/components/Box';
 
 const spin = keyframes({
   '0%': {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Input, { ReactTagsInputProps } from 'react-tagsinput';
-import { BoxProps } from '~src/components/Box';
+import { BoxProps } from 'src/components/Box';
 import { Wrapper } from './StyledComponents';
 
 interface TagsInputProps extends ReactTagsInputProps {

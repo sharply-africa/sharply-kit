@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState, forwardRef } from 'react';
-import { Box, BoxProps } from '~src/components/Box';
-import { Spinner } from '~src/components/Spinner';
-import { Stack } from '~src/components/Stack';
-import { Text, TextProps } from '~src/components/Text';
-import { IThemeFoundationColors } from '~src/theme/theme';
+import { Box, BoxProps } from 'src/components/Box';
+import { Spinner } from 'src/components/Spinner';
+import { Stack } from 'src/components/Stack';
+import { Text, TextProps } from 'src/components/Text';
+import { IThemeFoundationColors } from 'src/theme/theme';
 
 interface SwitchProps extends BoxProps {
   active?: boolean;

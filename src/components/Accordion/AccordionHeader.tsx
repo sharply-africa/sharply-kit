@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { Box, BoxProps } from '~src/components/Box';
-import { CaretDown } from '~src/components/Icons';
+import { Box, BoxProps } from 'src/components/Box';
+import { CaretDown } from 'src/components/Icons';
 import { useAccordion } from './AccordionContext';
 
 export type AccordionHeaderProps = BoxProps;

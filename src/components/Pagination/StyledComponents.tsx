@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { Box } from '~src/components/Box';
-import { Flex, FlexProps } from '~src/components/Flex';
+import { Box } from 'src/components/Box';
+import { Flex, FlexProps } from 'src/components/Flex';
 
 export const Wrapper = styled(Box)`
   align-items: center;

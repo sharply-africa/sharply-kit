@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState, forwardRef } from 'react';
 import tinycolor from 'tinycolor2';
-import { Box, BoxProps } from '~src/components/Box';
-import { Text } from '~src/components/Text';
-import useTheme from '~src/hooks/useTheme';
-import { IThemeFoundationColors } from '~src/theme/theme';
+import { Box, BoxProps } from 'src/components/Box';
+import { Text } from 'src/components/Text';
+import useTheme from 'src/hooks/useTheme';
+import { IThemeFoundationColors } from 'src/theme/theme';
 
 interface BadgeProps extends Omit<BoxProps, 'color'> {
   alpha?: number;

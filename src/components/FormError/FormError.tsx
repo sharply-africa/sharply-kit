@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
-import { Caution } from '~src/components/Icons';
-import { Box, BoxProps } from '~src/components/Box';
-import { Stack } from '~src/components/Stack';
-import { Text } from '~src/components/Text';
+import { Caution } from 'src/components/Icons';
+import { Box, BoxProps } from 'src/components/Box';
+import { Stack } from 'src/components/Stack';
+import { Text } from 'src/components/Text';
 
 interface FormErrorProps extends BoxProps {
   error?: string;

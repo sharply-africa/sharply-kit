@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react';
-import { Checkmark } from '~src/components/Icons';
-import { Box, BoxProps } from '~src/components/Box';
-import { Spinner } from '~src/components/Spinner';
-import { Stack } from '~src/components/Stack';
-import { Text, TextProps } from '~src/components/Text';
+import { Checkmark } from 'src/components/Icons';
+import { Box, BoxProps } from 'src/components/Box';
+import { Spinner } from 'src/components/Spinner';
+import { Stack } from 'src/components/Stack';
+import { Text, TextProps } from 'src/components/Text';
 
 interface CheckboxProps extends BoxProps {
   active?: boolean;

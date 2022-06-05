@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import styled from '@emotion/styled';
-import { Flex } from '~src/components/Flex';
+import { Flex } from 'src/components/Flex';
 
 const Wrapper = styled(Flex)`
   > svg {

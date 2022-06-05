@@ -34,7 +34,7 @@ import {
   createShouldForwardProp,
   props,
 } from '@styled-system/should-forward-prop';
-import { Children } from '~src/lib/utils';
+import { Children } from 'src/lib/utils';
 
 export interface BoxProps
   extends BackgroundProps,

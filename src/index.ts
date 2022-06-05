@@ -1,4 +1,4 @@
-import ThemeProvider from '~src/context/ThemeContext';
+import ThemeProvider from 'src/context/ThemeContext';
 import { Accordion } from './components/Accordion';
 import { BackButton, Button, CloseButton } from './components/Button';
 import { Badge } from './components/Badge';

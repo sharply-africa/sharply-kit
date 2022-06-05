@@ -2,11 +2,11 @@ import React, { forwardRef } from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/react';
 import tinycolor from 'tinycolor2';
-import { ArrowRight } from '~src/components/Icons';
-import { Box, BoxProps } from '~src/components/Box';
-import { Spinner } from '~src/components/Spinner';
-import { IThemeFoundationSpace } from '~src/theme/theme';
-import { Children } from '~src/lib';
+import { ArrowRight } from 'src/components/Icons';
+import { Box, BoxProps } from 'src/components/Box';
+import { Spinner } from 'src/components/Spinner';
+import { IThemeFoundationSpace } from 'src/theme/theme';
+import { Children } from 'src/lib';
 
 const IconWrapper = styled(Box)<{ fill?: string }>`
   svg {

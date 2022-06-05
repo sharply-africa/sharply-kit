@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import { Input } from '~src/components/Input';
+import { Input } from 'src/components/Input';
 import {
   YearMonthForm,
   formatDate,

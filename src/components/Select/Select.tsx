@@ -1,14 +1,7 @@
 import React, { forwardRef } from 'react';
-import { Box, BoxProps } from '~src/components/Box';
-
-const CaretDownIcon = new URL(
-  '~/src/assets/icons/caret-down.png',
-  import.meta.url,
-);
-const SelectSpinner = new URL(
-  '~/src/assets/icons/select-spinner.gif',
-  import.meta.url,
-);
+import { Box, BoxProps } from 'src/components/Box';
+import CaretDownIcon from 'src/assets/icons/caret-down.png';
+import SelectSpinner from 'src/assets/icons/select-spinner.gif';
 
 interface SelectProps extends BoxProps {
   isLoading?: boolean;

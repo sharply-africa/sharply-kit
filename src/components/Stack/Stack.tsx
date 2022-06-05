@@ -4,7 +4,7 @@
 import { SystemCssProperties } from '@styled-system/css';
 import React, { forwardRef } from 'react';
 import { ResponsiveValue } from 'styled-system';
-import { Box, BoxProps } from '~src/components/Box';
+import { Box, BoxProps } from 'src/components/Box';
 import {
   getDividerStyles,
   getStackStyles,
