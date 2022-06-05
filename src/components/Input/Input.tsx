@@ -10,54 +10,53 @@ import useTheme from 'src/hooks/useTheme';
 import { PhoneInputWrapper } from './StyledComponents';
 import { mergeRefs } from 'src/lib';
 
-type InputProps = React.HTMLProps<HTMLInputElement>;
+interface InputProps extends React.HTMLProps<HTMLInputElement>, BoxProps {}
 
 type InputRef =
   | string
   | ((instance: HTMLInputElement) => void)
   | React.MutableRefObject<HTMLInputElement>;
 
-const InputComponent = forwardRef<
-  HTMLInputElement,
-  BoxProps & HTMLInputElement
->((props, ref) => (
-  <Box
-    as="input"
-    ref={ref}
-    tx="form"
-    {...props}
-    __css={{
-      appearance: 'none',
-      backgroundColor: 'white',
-      border: '1px solid',
-      borderColor: '#E7ECE8',
-      borderRadius: 'base',
-      color: 'heading',
-      fontFamily: 'body',
-      fontSize: ['sm'],
-      fontWeight: 'normal',
-      lineHeight: 'default',
-      outline: 'none',
-      px: 4,
-      py: 3,
-      width: '100%',
-      '&:disabled': {
-        backgroundColor: '#E7ECE8',
-        opacity: 0.5,
-      },
-      '&:readonly': {
-        backgroundColor: '#E7ECE8',
-        opacity: 0.5,
-      },
-      '&:focus': {
-        borderColor: 'primary',
-      },
-      '&:placholder': {
-        color: '#C4C4C4',
-      },
-    }}
-  />
-));
+const InputComponent = forwardRef<HTMLInputElement, InputProps>(
+  (props, ref) => (
+    <Box
+      as="input"
+      ref={ref}
+      tx="form"
+      {...props}
+      __css={{
+        appearance: 'none',
+        backgroundColor: 'white',
+        border: '1px solid',
+        borderColor: '#E7ECE8',
+        borderRadius: 'base',
+        color: 'heading',
+        fontFamily: 'body',
+        fontSize: ['sm'],
+        fontWeight: 'normal',
+        lineHeight: 'default',
+        outline: 'none',
+        px: 4,
+        py: 3,
+        width: '100%',
+        '&:disabled': {
+          backgroundColor: '#E7ECE8',
+          opacity: 0.5,
+        },
+        '&:readonly': {
+          backgroundColor: '#E7ECE8',
+          opacity: 0.5,
+        },
+        '&:focus': {
+          borderColor: 'primary',
+        },
+        '&:placholder': {
+          color: '#C4C4C4',
+        },
+      }}
+    />
+  ),
+);
 
 const AUTOCOMPLETE_FIELDS = ['geometry.location', 'formatted_address'];
 
