@@ -4,9 +4,11 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "declaration":true,
+    "downlevelIteration":true,
     "emitDeclarationOnly": false,
     "esModuleInterop": true,
     "experimentalDecorators": true,
+    "inlineSourceMap": true,
     "isolatedModules": true,
     "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -14,10 +16,9 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "outDir": "dist",
-    "downlevelIteration":true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "target": "es5",
     "paths": {
       "src/*": ["./src/*"]

@@ -7,15 +7,17 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build:storybook": "build-storybook",
     "build:tsc": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "build": "npm-run-all clean build:tsc copy:assets",
+    "build": "npm-run-all build:tsc copy:assets",
     "clean": "rimraf dist",
     "copy:assets": "cp -R  ./src/assets ./dist/assets",
     "dev": "npm-run-all --parallel watch storybook",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit --emitDeclarationOnly false  && eslint src/**/*.ts{,x}",
+    "prebuild":"yarn clean",
     "prepare": "yarn build --silent",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
