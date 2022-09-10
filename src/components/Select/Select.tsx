@@ -1,11 +1,6 @@
 import React, { forwardRef } from 'react';
 import { Box, BoxProps } from 'src/components/Box';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const CaretDownIcon = require('src/assets/icons/caret-down.png');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const SelectSpinner = require('src/assets/icons/select-spinner.gif');
-
 interface SelectProps extends BoxProps {
   isLoading?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -19,9 +14,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => (
     tx="form"
     {...props}
     __css={{
-      appearance: 'none',
       backgroundColor: 'white',
-      backgroundImage: `url(${CaretDownIcon})`,
       backgroundPosition: 'calc(100% - 1rem) 50%',
       backgroundRepeat: 'no-repeat',
       backgroundSize: '12px',
@@ -37,13 +30,6 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => (
       px: 4,
       py: 3,
       width: '100%',
-      ...(props.isLoading
-        ? {
-            backgroundImage: `url(${SelectSpinner})`,
-            backgroundSize: '25px',
-            pointerEvents: 'none',
-          }
-        : {}),
       '&:focus': {
         borderColor: 'primary',
       },
