@@ -6,13 +6,13 @@ export type AccordionContentProps = BoxProps;
 
 const AccordionContent = forwardRef(
   ({ children, ...props }: AccordionContentProps, ref) => {
-    const { contentHeight, contentRef } = useAccordion();
+    const { contentHeight, contentRef, isOpen } = useAccordion();
 
     return (
       <Box
         ref={ref}
         maxHeight={contentHeight}
-        __css={{ transition: 'all 0.2s' }}
+        __css={{ opacity: isOpen ? 1 : 0, transition: 'all 0.2s' }}
       >
         <Box
           ref={contentRef}

@@ -4,7 +4,7 @@ import dateFnsFormat from 'date-fns/format';
 import dateFnsParse from 'date-fns/parse';
 
 export const currentYear = new Date().getFullYear();
-export const fromMonth = new Date(currentYear, 0);
+export const fromMonth = new Date();
 export const toMonth = new Date(currentYear - 70, 11);
 
 export const YearMonthForm = ({ date, localeUtils, onChange }) => {

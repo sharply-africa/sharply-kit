@@ -1,46 +1,33 @@
-import React, { forwardRef, useMemo, useState } from 'react';
+import React, { forwardRef } from 'react';
 import { Flex } from 'src/components/Flex';
 import { Text } from 'src/components/Text';
 import { Select } from 'src/components/Select';
 import { CaretLeft, CaretRight } from 'src/components/Icons';
-import { useDidUpdate } from 'src/hooks/useDidUpdate';
 import { Control, Controls, Wrapper } from './StyledComponents';
 
 interface PaginationProps {
-  initialPage?: number;
+  page?: number;
   onChange?: (page: number) => void;
   total?: number;
 }
 
 const Pagination = forwardRef(
-  (
-    { initialPage = 1, onChange = () => {}, total = 0 }: PaginationProps,
-    ref,
-  ) => {
-    const [page, setPage] = useState(initialPage);
-
-    useDidUpdate(() => {
-      onChange(page);
-    }, [page]);
-
-    const pages = useMemo(
-      () =>
-        Array.from({ length: total + 1 })
-          .map((_, i) => i)
-          .filter((x) => x > 0),
-      [total],
-    );
-
+  ({ page = 1, onChange = () => {}, total = 0 }: PaginationProps, ref) => {
     const onSelectChange = (e) => {
-      setPage(+e.target.value);
+      const newPage = +e.target.value;
+      onChange(newPage);
     };
 
     const goToPrev = () => {
-      if (page > 1) setPage((v) => +v - 1);
+      if (page > 1) {
+        onChange(+page - 1);
+      }
     };
 
     const goToNext = () => {
-      if (page < total) setPage((v) => +v + 1);
+      if (page < total) {
+        onChange(+page + 1);
+      }
     };
 
     if (!total) return null;
@@ -55,11 +42,13 @@ const Pagination = forwardRef(
             py="0.9rem"
             value={page}
           >
-            {pages.map((x) => (
-              <option key={x} value={x}>
-                {x}
-              </option>
-            ))}
+            {[...Array(total + 1).keys()]
+              .filter((x) => x > 0)
+              .map((x) => (
+                <option key={x} value={x}>
+                  {x}
+                </option>
+              ))}
           </Select>
 
           <Text flexShrink={0}>of {total}</Text>

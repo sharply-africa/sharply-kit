@@ -12,6 +12,7 @@ import {
 const DatePicker = ({
   onChange = () => {},
   placeholder = 'yyyy-mm-dd',
+  dayPickerProps,
   ...props
 }) => {
   const [month, setMonth] = useState(fromMonth);
@@ -42,7 +43,7 @@ const DatePicker = ({
           />
         ),
         disabledDays: { after: new Date() },
-        ...props,
+        ...dayPickerProps,
       }}
       {...props}
       component={(inputProps) => <Input readOnly {...inputProps} />}

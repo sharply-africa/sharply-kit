@@ -10,7 +10,9 @@ import useTheme from 'src/hooks/useTheme';
 import { PhoneInputWrapper } from './StyledComponents';
 import { mergeRefs } from 'src/lib';
 
-interface InputProps extends React.HTMLProps<HTMLInputElement>, BoxProps {}
+interface InputProps extends React.HTMLProps<HTMLInputElement>, BoxProps {
+  placesOptions?: Record<string, any>;
+}
 
 type InputRef =
   | string
@@ -61,7 +63,7 @@ const InputComponent = forwardRef<HTMLInputElement, InputProps>(
 const AUTOCOMPLETE_FIELDS = ['geometry.location', 'formatted_address'];
 
 export const Input = forwardRef<InputRef, InputProps>(
-  ({ onChange, type, value, ...props }, ref) => {
+  ({ onChange, type, value, placesOptions, ...props }, ref) => {
     const hasSetDefaultValue = React.useRef(false);
     const { googleMapsKey } = useTheme();
 
@@ -75,8 +77,8 @@ export const Input = forwardRef<InputRef, InputProps>(
       },
       options: {
         types: ['geocode', 'establishment'],
-        componentRestrictions: { country: 'ng' },
         fields: AUTOCOMPLETE_FIELDS,
+        ...placesOptions,
       },
     });
 

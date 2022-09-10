@@ -14,6 +14,7 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "outDir": "dist",
+    "downlevelIteration":true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
