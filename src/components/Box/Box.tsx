@@ -28,7 +28,6 @@ import {
   TypographyProps,
 } from 'styled-system';
 import { ClassNamesProps } from '@emotion/react';
-
 import css, { CSSProperties, get } from '@styled-system/css';
 import {
   createShouldForwardProp,

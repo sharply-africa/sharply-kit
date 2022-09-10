@@ -1,7 +1,10 @@
 import React, { forwardRef } from 'react';
 import { Box, BoxProps } from 'src/components/Box';
-import CaretDownIcon from 'src/assets/icons/caret-down.png';
-import SelectSpinner from 'src/assets/icons/select-spinner.gif';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const CaretDownIcon = require('src/assets/icons/caret-down.png');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const SelectSpinner = require('src/assets/icons/select-spinner.gif');
 
 interface SelectProps extends BoxProps {
   isLoading?: boolean;

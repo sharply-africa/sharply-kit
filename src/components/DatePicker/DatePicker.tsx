@@ -12,7 +12,7 @@ import {
 const DatePicker = ({
   onChange = () => {},
   placeholder = 'yyyy-mm-dd',
-  dayPickerProps,
+  dayPickerProps = {},
   ...props
 }) => {
   const [month, setMonth] = useState(fromMonth);

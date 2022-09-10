@@ -1,4 +1,3 @@
-import ThemeProvider from 'src/context/ThemeContext';
 import { Accordion } from './components/Accordion';
 import { BackButton, Button, CloseButton } from './components/Button';
 import { Badge } from './components/Badge';
@@ -6,6 +5,7 @@ import { Box } from './components/Box';
 import { Card } from './components/Card';
 import { Checkbox } from './components/Checkbox';
 import { DatePicker } from './components/DatePicker';
+import { Flex } from './components/Flex';
 import { FormError } from './components/FormError';
 import { FormGroup } from './components/FormGroup';
 import { Heading } from './components/Heading';
@@ -22,8 +22,10 @@ import { Switch } from './components/Switch';
 import { TagsInput } from './components/TagsInput';
 import { Text } from './components/Text';
 import { Textarea } from './components/Textarea';
+import ThemeProvider from 'src/context/ThemeContext';
 import useTheme from './hooks/useTheme';
 import useToast from './hooks/useToast';
+import theme from './theme';
 
 export {
   ThemeProvider,
@@ -36,6 +38,7 @@ export {
   Checkbox,
   CloseButton,
   DatePicker,
+  Flex,
   FormError,
   FormGroup,
   Heading,
@@ -54,6 +57,7 @@ export {
   TagsInput,
   Text,
   Textarea,
+  theme,
   useTheme,
   useToast,
 };

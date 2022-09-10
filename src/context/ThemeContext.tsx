@@ -7,8 +7,8 @@ import ToastReset from 'src/resets/ToastReset';
 import defaultTheme, { ITheme } from 'src/theme';
 
 interface ThemeProviderProps {
-  children: React.ReactNode;
-  googleMapsKey?: string;
+  children: JSX.Element | JSX.Element[];
+  googleMapsKey: string;
   resetCSS?: boolean;
   theme?: ITheme;
 }
@@ -24,7 +24,7 @@ export const ThemeContext = React.createContext({} as ThemeContextProps);
 const ThemeProvider = (props: ThemeProviderProps): JSX.Element => {
   const {
     children,
-    googleMapsKey = '',
+    googleMapsKey,
     resetCSS = true,
     theme = defaultTheme,
   } = props;
