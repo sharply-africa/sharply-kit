@@ -1,63 +1,29 @@
-import { Accordion } from './components/Accordion';
-import { BackButton, Button, CloseButton } from './components/Button';
-import { Badge } from './components/Badge';
-import { Box } from './components/Box';
-import { Card } from './components/Card';
-import { Checkbox } from './components/Checkbox';
-import { DatePicker } from './components/DatePicker';
-import { Flex } from './components/Flex';
-import { FormError } from './components/FormError';
-import { FormGroup } from './components/FormGroup';
-import { Heading } from './components/Heading';
-import { IconBox } from './components/IconBox';
-import { Input, InputAddon, InputGroup } from './components/Input';
-import { Label } from './components/Label';
-import { MenuCard } from './components/MenuCard';
-import { Pagination } from './components/Pagination';
-import { Radio } from './components/Radio';
-import { Select } from './components/Select';
-import { Spinner } from './components/Spinner';
-import { Stack } from './components/Stack';
-import { Switch } from './components/Switch';
-import { TagsInput } from './components/TagsInput';
-import { Text } from './components/Text';
-import { Textarea } from './components/Textarea';
-import ThemeProvider from 'src/context/ThemeContext';
-import useTheme from './hooks/useTheme';
-import useToast from './hooks/useToast';
-import theme from './theme';
+export * from './components/Accordion';
+export * from './components/Button';
+export * from './components/Badge';
+export * from './components/Box';
+export * from './components/Card';
+export * from './components/Checkbox';
+export * from './components/DatePicker';
+export * from './components/Flex';
+export * from './components/FormError';
+export * from './components/FormGroup';
+export * from './components/Heading';
+export * from './components/IconBox';
+export * from './components/Input';
+export * from './components/Label';
+export * from './components/MenuCard';
+export * from './components/Pagination';
+export * from './components/Radio';
+export * from './components/Select';
+export * from './components/Spinner';
+export * from './components/Stack';
+export * from './components/Switch';
+export * from './components/TagsInput';
+export * from './components/Text';
+export * from './components/Textarea';
 
-export {
-  ThemeProvider,
-  Accordion,
-  BackButton,
-  Badge,
-  Box,
-  Button,
-  Card,
-  Checkbox,
-  CloseButton,
-  DatePicker,
-  Flex,
-  FormError,
-  FormGroup,
-  Heading,
-  IconBox,
-  Input,
-  InputAddon,
-  InputGroup,
-  Label,
-  MenuCard,
-  Pagination,
-  Radio,
-  Select,
-  Spinner,
-  Stack,
-  Switch,
-  TagsInput,
-  Text,
-  Textarea,
-  theme,
-  useTheme,
-  useToast,
-};
+export { default as theme } from './theme';
+export { default as ThemeProvider } from 'src/context/ThemeContext';
+export { default as useTheme } from './hooks/useTheme';
+export { default as useToast } from './hooks/useToast';
