@@ -53,6 +53,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const wrapperWithIconStyle =
     leftIcon || rightIcon || showArrowIcon
       ? {
+          alignItems: 'center',
           justifyContent: isLoading ? 'center' : 'space-between',
         }
       : {};
@@ -111,7 +112,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
           {leftIcon}
         </IconWrapper>
       )}
-      {isLoading ? <Spinner size={'1.5rem'} thickness="1px" /> : children}
+      {isLoading ? (
+        <Spinner size={'1.5rem'} color={newTextColor} thickness="1px" />
+      ) : (
+        children
+      )}
       {renderRightIcon()}
     </Box>
   );
