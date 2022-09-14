@@ -1,6 +1,6 @@
 {
   "name": "sharply-kit",
-  "private": true,
+  "private": false,
   "version": "1.3.0",
   "description": "Sharply africa web ui kit",
   "source": "src/index.ts",
@@ -20,7 +20,7 @@
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit --emitDeclarationOnly false  && eslint src/**/*.ts{,x}",
     "prebuild": "yarn clean",
-    "prepare": "yarn build",
+    "prepublishOnly": "yarn build",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
