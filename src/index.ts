@@ -1,7 +1,7 @@
 export * from './components/Accordion';
-export * from './components/Button';
 export * from './components/Badge';
 export * from './components/Box';
+export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/DatePicker';
@@ -19,7 +19,6 @@ export * from './components/Select';
 export * from './components/Spinner';
 export * from './components/Stack';
 export * from './components/Switch';
-export * from './components/TagsInput';
 export * from './components/Text';
 export * from './components/Textarea';
 

@@ -48,7 +48,7 @@ const AccordionComponent = forwardRef(
         isOpen,
         toggleOpen,
       }),
-      [contentHeight, contentRef, isOpen, toggleOpen],
+      [contentHeight, isOpen, toggleOpen],
     );
 
     return (

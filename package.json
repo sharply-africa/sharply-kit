@@ -15,12 +15,11 @@
     "build:tsc": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
     "build": "yarn build:tsc",
     "clean": "rimraf dist",
-    "copy:assets": "cp -R  ./src/assets ./dist/assets",
     "dev": "npm-run-all --parallel watch storybook",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit --emitDeclarationOnly false  && eslint src/**/*.ts{,x}",
     "prebuild": "yarn clean",
-    "prepublishOnly": "yarn build",
+    "prepare": "yarn build",
     "storybook": "start-storybook -p 6006",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -42,7 +41,6 @@
     "react-dom": ">=17.0.1",
     "react-google-autocomplete": ">=2.7.0",
     "react-phone-input-2": ">=2.15.0",
-    "react-tagsinput": ">=3.19.0",
     "react-toastify": ">=9.0.1"
   },
   "dependencies": {
@@ -98,7 +96,6 @@
     "react-dom": "^18.1.0",
     "react-google-autocomplete": "^2.7.0",
     "react-phone-input-2": "^2.15.0",
-    "react-tagsinput": "^3.19.0",
     "react-toastify": "^9.0.1",
     "rimraf": "^3.0.2",
     "styled-system": "^5.1.5",

@@ -13,7 +13,7 @@ export const parameters = {
 
 const withTheme = (Story, context) => {
   return (
-    <ThemeProvider>
+    <ThemeProvider googleMapsKey="fdubxniedfubixno">
       <div id="story-wrapper" style={{ minHeight: '100vh' }}>
         <Story {...context} />
       </div>

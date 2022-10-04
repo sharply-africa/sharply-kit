@@ -51,7 +51,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       : theme.colors.white;
 
   const wrapperWithIconStyle =
-    leftIcon || rightIcon || showArrowIcon
+    leftIcon || rightIcon || showArrowIcon || isLoading
       ? {
           alignItems: 'center',
           justifyContent: isLoading ? 'center' : 'space-between',
