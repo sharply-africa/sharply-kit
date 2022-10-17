@@ -2,7 +2,7 @@
 .cache
 .parcel-cache
 build
-dist
+# dist
 yarn-error.log
 tsconfig.tsbuildinfo
 storybook-static

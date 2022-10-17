@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/theme/foundations/shadows.ts"],"names":["shadows"],"mappings":"AAAO,IAAMA,EAAU,CACrB,QAAS,qBACX","sourcesContent":["export const shadows = {\n  default: '0px 4px 4px #F1FAF9',\n};\n"]}

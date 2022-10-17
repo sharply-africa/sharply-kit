@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/theme/components/form.ts"],"names":["form"],"mappings":"AAAO,IAAMA,EAAO,CAClB,eAAgB,CACd,gBAAiB,YACnB,CACF","sourcesContent":["export const form = {\n  inputAlternate: {\n    backgroundColor: 'background',\n  },\n};\n"]}

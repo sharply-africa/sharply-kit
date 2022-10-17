@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/theme/foundations/breakpoints.ts"],"names":["breakpoints"],"mappings":"AAAO,IAAMA,EAAc,CACzB,GAAI,OACJ,GAAI,OACJ,GAAI,OACJ,GAAI,MACN","sourcesContent":["export const breakpoints = {\n  sm: '36em',\n  md: '48em',\n  lg: '62em',\n  xl: '75em',\n};\n"]}
