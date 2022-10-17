@@ -1,0 +1,44 @@
+import components from './components/index.js';
+import foundations from './foundations/index.js';
+import variants from './variants/index.js';
+export { extendTheme } from './utils.js';
+
+declare type IThemeComponentButtons = typeof components.buttons;
+declare type IThemeComponentForm = typeof components.form;
+declare type IThemeComponentText = typeof components.text;
+declare type IThemeFoundationBreakpoints = typeof foundations.breakpoints;
+declare type IThemeFoundationColors = typeof foundations.colors | Record<string, any>;
+declare type IThemeFoundationMediaQuery = typeof foundations.mq;
+declare type IThemeFoundationRadii = typeof foundations.radii;
+declare type IThemeFoundationShadows = typeof foundations.shadows;
+declare type IThemeFoundationSpace = typeof foundations.space;
+declare type IThemeFoundationZIndices = typeof foundations.zIndices;
+declare type IThemeTypographyFontFamilies = typeof foundations.fonts;
+declare type IThemeTypographyFontSizes = typeof foundations.fontSizes;
+declare type IThemeTypographyFontWeights = typeof foundations.fontWeights;
+declare type IThemeTypographyLetterSpacings = typeof foundations.letterSpacings;
+declare type IThemeTypographyLineHeights = typeof foundations.lineHeights;
+declare type IThemeTypographyTextAlign = typeof foundations.textAlign;
+declare type IThemeVariants = typeof variants;
+declare type ITheme = {
+    breakpoints: IThemeFoundationBreakpoints;
+    buttons: IThemeComponentButtons;
+    colors: IThemeFoundationColors;
+    fonts: IThemeTypographyFontFamilies;
+    fontSizes: IThemeTypographyFontSizes;
+    fontWeights: IThemeTypographyFontWeights;
+    form: IThemeComponentForm;
+    letterSpacings: IThemeTypographyLetterSpacings;
+    lineHeights: IThemeTypographyLineHeights;
+    mq: IThemeFoundationMediaQuery;
+    radii: IThemeFoundationRadii;
+    shadows: IThemeFoundationShadows;
+    space: IThemeFoundationSpace;
+    text: IThemeComponentText;
+    textAlign: IThemeTypographyTextAlign;
+    variants: IThemeVariants;
+    zIndices: IThemeFoundationZIndices;
+};
+declare const theme: ITheme;
+
+export { ITheme, IThemeComponentButtons, IThemeComponentForm, IThemeComponentText, IThemeFoundationBreakpoints, IThemeFoundationColors, IThemeFoundationMediaQuery, IThemeFoundationRadii, IThemeFoundationShadows, IThemeFoundationSpace, IThemeFoundationZIndices, IThemeTypographyFontFamilies, IThemeTypographyFontSizes, IThemeTypographyFontWeights, IThemeTypographyLetterSpacings, IThemeTypographyLineHeights, IThemeTypographyTextAlign, IThemeVariants, theme as default };

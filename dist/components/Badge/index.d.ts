@@ -1,0 +1,12 @@
+export { default as Badge } from './Badge.js';
+import 'react';
+import '../Box/Box.js';
+import 'styled-system';
+import '@emotion/react';
+import '@styled-system/css';
+import '../../lib/utils.js';
+import '../../theme/theme.js';
+import '../../theme/components/index.js';
+import '../../theme/foundations/index.js';
+import '../../theme/variants/index.js';
+import '../../theme/utils.js';
