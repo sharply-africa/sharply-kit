@@ -5,6 +5,7 @@ export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/DatePicker';
+export * from './components/DeliveryFee';
 export * from './components/Flex';
 export * from './components/FormError';
 export * from './components/FormGroup';
