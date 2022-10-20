@@ -28,7 +28,7 @@ import {
   TypographyProps,
 } from 'styled-system';
 import { ClassNamesProps } from '@emotion/react';
-import css, { CSSProperties, get } from '@styled-system/css';
+import css, { CSSProperties, get, SystemStyleObject } from '@styled-system/css';
 import {
   createShouldForwardProp,
   props,
@@ -49,13 +49,13 @@ export interface BoxProps
     ShadowProps,
     SpaceProps,
     TypographyProps {
-  __css?: CSSProperties | React.CSSProperties | any;
+  __css?: CSSProperties | React.CSSProperties | SystemStyleObject;
   as?: React.ElementType<any>;
   children?: Children;
   className?: ClassNamesProps;
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLElement>;
-  sx?: CSSProperties;
+  sx?: SystemStyleObject;
   tx?: string;
   variant?: string;
 }

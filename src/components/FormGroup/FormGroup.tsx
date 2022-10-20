@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
-import { Stack } from 'src/components/Stack';
+import { Stack, StackProps } from 'src/components/Stack';
 
-const FormGroup = forwardRef((props, ref) => (
+const FormGroup = forwardRef((props: StackProps, ref) => (
   <Stack ref={ref} spacing={1} {...props} />
 ));
 

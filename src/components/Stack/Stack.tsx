@@ -16,7 +16,7 @@ type StackDirection = ResponsiveValue<
   'row' | 'column' | 'row-reverse' | 'column-reverse'
 >;
 
-interface StackProps extends BoxProps {
+export interface StackProps extends BoxProps {
   align?: SystemCssProperties['alignItems'] | any;
   direction?: StackDirection;
   divider?: React.ReactElement;

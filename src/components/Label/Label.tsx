@@ -1,7 +1,9 @@
 import React, { forwardRef } from 'react';
 import { Box, BoxProps } from 'src/components/Box';
 
-const Label = forwardRef<HTMLLabelElement, BoxProps>((props, ref) => (
+type LabelProps = React.ComponentPropsWithoutRef<'label'> & BoxProps;
+
+const Label = forwardRef<HTMLLabelElement, LabelProps>((props, ref) => (
   <Box
     as="label"
     ref={ref}
