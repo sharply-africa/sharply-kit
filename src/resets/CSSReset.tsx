@@ -151,11 +151,6 @@ export const CSSReset = () => (
         padding: 0;
       }
 
-      [type="number"]::-webkit-inner-spin-button,
-      [type="number"]::-webkit-outer-spin-button {
-        -webkit-appearance: none !important;
-      }
-
       input[type="number"] {
         -moz-appearance: textfield;
       }

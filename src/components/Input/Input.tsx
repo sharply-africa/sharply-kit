@@ -7,8 +7,8 @@ import { usePlacesWidget } from 'react-google-autocomplete';
 import usePlacesService from 'react-google-autocomplete/lib/usePlacesAutocompleteService';
 import { Box, BoxProps } from 'src/components/Box';
 import useTheme from 'src/hooks/useTheme';
-import { PhoneInputWrapper } from './StyledComponents';
 import { mergeRefs } from 'src/lib';
+import { PhoneInputWrapper } from './StyledComponents';
 
 interface InputProps extends React.HTMLProps<HTMLInputElement>, BoxProps {
   placesOptions?: Record<string, any>;
