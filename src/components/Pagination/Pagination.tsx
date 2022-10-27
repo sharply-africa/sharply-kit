@@ -5,7 +5,7 @@ import { Select } from 'src/components/Select';
 import { CaretLeft, CaretRight } from 'src/components/Icons';
 import { Control, Controls, Wrapper } from './StyledComponents';
 
-interface PaginationProps {
+export interface PaginationProps {
   page?: number;
   onChange?: (page: number) => void;
   total?: number;

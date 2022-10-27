@@ -6,7 +6,7 @@ import CSSReset from 'src/resets/CSSReset';
 import ToastReset from 'src/resets/ToastReset';
 import defaultTheme, { ITheme } from 'src/theme';
 
-interface ThemeProviderProps {
+export interface ThemeProviderProps {
   children: JSX.Element | JSX.Element[];
   googleMapsKey: string;
   resetCSS?: boolean;

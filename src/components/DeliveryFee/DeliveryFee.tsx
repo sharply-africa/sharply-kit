@@ -5,7 +5,7 @@ import { Stack } from 'src/components/Stack';
 import { Text } from 'src/components/Text';
 import { Money } from '../Icons';
 
-type DeliveryFeeProps = {
+export type DeliveryFeeProps = {
   amount?: number;
 } & BoxProps;
 

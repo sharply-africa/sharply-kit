@@ -24,7 +24,12 @@ export * from './components/Switch';
 export * from './components/Text';
 export * from './components/Textarea';
 
-export { default as theme } from './theme';
-export { default as ThemeProvider } from 'src/context/ThemeContext';
+export { default as ThemeProvider } from './context/ThemeContext';
+export type {
+  ThemeContext,
+  ThemeContextProps,
+  ThemeProviderProps,
+} from './context/ThemeContext';
 export { default as useTheme } from './hooks/useTheme';
 export { default as useToast } from './hooks/useToast';
+export { default as theme } from './theme';

@@ -10,11 +10,13 @@ import useTheme from 'src/hooks/useTheme';
 import { mergeRefs } from 'src/lib';
 import { PhoneInputWrapper } from './StyledComponents';
 
-interface InputProps extends React.HTMLProps<HTMLInputElement>, BoxProps {
+export interface InputProps
+  extends React.HTMLProps<HTMLInputElement>,
+    BoxProps {
   placesOptions?: Record<string, any>;
 }
 
-type InputRef =
+export type InputRef =
   | string
   | ((instance: HTMLInputElement) => void)
   | React.MutableRefObject<HTMLInputElement>;

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Box, BoxProps } from 'src/components/Box';
 
-interface SelectProps extends BoxProps {
+export interface SelectProps extends BoxProps {
   isLoading?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   value?: any;

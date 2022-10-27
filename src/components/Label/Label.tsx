@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Box, BoxProps } from 'src/components/Box';
 
-type LabelProps = React.ComponentPropsWithoutRef<'label'> & BoxProps;
+export type LabelProps = React.ComponentPropsWithoutRef<'label'> & BoxProps;
 
 const Label = forwardRef<HTMLLabelElement, LabelProps>((props, ref) => (
   <Box

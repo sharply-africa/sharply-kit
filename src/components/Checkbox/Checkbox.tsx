@@ -5,7 +5,7 @@ import { Spinner } from 'src/components/Spinner';
 import { Stack } from 'src/components/Stack';
 import { Text, TextProps } from 'src/components/Text';
 
-interface CheckboxProps extends BoxProps {
+export interface CheckboxProps extends BoxProps {
   active?: boolean;
   icon?: React.ReactElement;
   isLoading?: boolean;

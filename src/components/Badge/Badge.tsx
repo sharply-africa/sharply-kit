@@ -5,7 +5,7 @@ import { Text } from 'src/components/Text';
 import useTheme from 'src/hooks/useTheme';
 import { IThemeFoundationColors } from 'src/theme/theme';
 
-interface BadgeProps extends Omit<BoxProps, 'color'> {
+export interface BadgeProps extends Omit<BoxProps, 'color'> {
   alpha?: number;
   color?: keyof IThemeFoundationColors;
   text?: string;

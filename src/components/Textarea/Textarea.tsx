@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Box, BoxProps } from 'src/components/Box';
 
-interface TextareaProps extends BoxProps {
+export interface TextareaProps extends BoxProps {
   rows?: number | string;
 }
 

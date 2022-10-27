@@ -11,7 +11,7 @@ const spin = keyframes({
   },
 });
 
-interface SpinnerProps extends BoxProps {
+export interface SpinnerProps extends BoxProps {
   color?: string;
   emptyColor?: string;
   size?: string | number;

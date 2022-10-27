@@ -6,7 +6,7 @@ import { Card } from 'src/components/Card';
 import { IThemeFoundationColors } from 'src/theme/theme';
 import { Children } from 'src/lib/utils';
 
-interface MenuCardProps extends BoxProps {
+export interface MenuCardProps extends BoxProps {
   icon?: Children;
   iconBg?: keyof IThemeFoundationColors;
   iconWrapperProps?: BoxProps;

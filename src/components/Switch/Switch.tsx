@@ -5,7 +5,7 @@ import { Stack } from 'src/components/Stack';
 import { Text, TextProps } from 'src/components/Text';
 import { IThemeFoundationColors } from 'src/theme/theme';
 
-interface SwitchProps extends BoxProps {
+export interface SwitchProps extends BoxProps {
   active?: boolean;
   activeBackgroundColor?: keyof IThemeFoundationColors;
   inactiveBackgroundColor?: keyof IThemeFoundationColors;

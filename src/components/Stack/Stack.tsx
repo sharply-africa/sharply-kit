@@ -12,7 +12,7 @@ import {
   selector,
 } from './utils';
 
-type StackDirection = ResponsiveValue<
+export type StackDirection = ResponsiveValue<
   'row' | 'column' | 'row-reverse' | 'column-reverse'
 >;
 

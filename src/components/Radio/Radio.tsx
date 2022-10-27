@@ -4,7 +4,7 @@ import { Spinner } from 'src/components/Spinner';
 import { Stack } from 'src/components/Stack';
 import { Text, TextProps } from 'src/components/Text';
 
-interface RadioProps extends BoxProps {
+export interface RadioProps extends BoxProps {
   active?: boolean;
   isLoading?: boolean;
   onChange?: (v: boolean) => void;

@@ -11,7 +11,7 @@ import { AccordionContext } from './AccordionContext';
 import AccordionHeader from './AccordionHeader';
 import AccordionContent from './AccordionContent';
 
-interface AccordionProps extends BoxProps {
+export interface AccordionProps extends BoxProps {
   initialOpen?: boolean;
   onChange?: (v: any) => void;
 }

@@ -12,7 +12,7 @@ import useClickAway from 'src/hooks/useClickAway';
 import useToggle from 'src/hooks/useToggle';
 import { CaretDown } from '../Icons';
 
-type PricePickerProps = {
+export type PricePickerProps = {
   error: string;
   getPrice?: (price: string) => Record<string, any>;
   label?: string;
