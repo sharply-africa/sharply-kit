@@ -50,7 +50,7 @@ export interface BoxProps
     SpaceProps,
     TypographyProps {
   __css?: CSSProperties | React.CSSProperties | SystemStyleObject;
-  as?: React.ElementType<any>;
+  as?: React.ElementType<any> | JSX.Element | string;
   children?: Children;
   className?: ClassNamesProps;
   disabled?: boolean;
