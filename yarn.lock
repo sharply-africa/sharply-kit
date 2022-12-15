@@ -11758,13 +11758,6 @@ tsconfig-paths@^3.14.1:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-"tscpaths@https://github.com/sharply-africa/tscpaths.git":
-  version "0.0.9"
-  resolved "https://github.com/sharply-africa/tscpaths.git#e3c85c8fdb783fbbf1c71074003bd0d3038b6340"
-  dependencies:
-    commander "^2.20.0"
-    globby "^9.2.0"
-
 tslib@^1.8.1, tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
