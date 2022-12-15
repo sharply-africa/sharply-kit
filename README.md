@@ -7,7 +7,7 @@ Sharply kit provides a set of accessible, reusable, and composable React compone
 To use Sharply kit components, all you need to do is install the sharply-kit package and its peer dependencies:
 
 ```
-$ npx npx install-peerdeps sharply-kit
+$ npx install-peerdeps sharply-kit
 ```
 
 ## Usage

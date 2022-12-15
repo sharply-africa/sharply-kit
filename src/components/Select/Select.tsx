@@ -14,6 +14,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => (
     tx="form"
     {...props}
     __css={{
+      appearance: 'none',
       backgroundColor: 'white',
       backgroundPosition: 'calc(100% - 1rem) 50%',
       backgroundRepeat: 'no-repeat',
