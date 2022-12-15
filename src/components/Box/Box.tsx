@@ -33,7 +33,6 @@ import {
   createShouldForwardProp,
   props,
 } from '@styled-system/should-forward-prop';
-import { Children } from 'src/lib/utils';
 
 export interface BoxProps
   extends BackgroundProps,
@@ -51,7 +50,7 @@ export interface BoxProps
     TypographyProps {
   __css?: CSSProperties | React.CSSProperties | SystemStyleObject;
   as?: React.ElementType<any> | JSX.Element | string;
-  children?: Children;
+  children?: React.ReactNode | React.ReactNode[];
   className?: ClassNamesProps;
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLElement>;

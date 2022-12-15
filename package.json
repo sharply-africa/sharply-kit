@@ -1,31 +1,38 @@
 {
   "name": "sharply-kit",
   "private": false,
-  "version": "1.6.2",
+  "version": "1.6.5-beta",
   "description": "Sharply africa web ui kit",
-  "source": "src/index.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
   "scripts": {
     "build:storybook": "build-storybook",
-    "build:tsc": "tsc --project tsconfig.json && tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "build": "yarn build:tsc",
+    "build": "tsup",
     "clean": "rimraf dist",
     "dev": "npm-run-all --parallel watch storybook",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit --emitDeclarationOnly false  && eslint src/**/*.ts{,x}",
     "prebuild": "yarn clean",
     "prepare": "yarn build",
-    "storybook": "start-storybook -p 6006",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "storybook": "start-storybook -p 6006 --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "type-check": "tsc",
+    "watch": "yarn build --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skyeops/sharply-kit.git"
+    "url": "git+https://github.com/sharply-africa/sharply-kit.git"
   },
   "author": "Remilekun Salami",
   "license": "ISC",
@@ -44,6 +51,10 @@
     "react-toastify": ">=9.0.1"
   },
   "dependencies": {
+    "@types/styled-system": "^5.1.15",
+    "@types/styled-system__css": "^5.0.16",
+    "@types/styled-system__should-forward-prop": "^5.1.2",
+    "@types/tinycolor2": "^1.4.3",
     "@styled-system/css": "^5.1.5",
     "@styled-system/should-forward-prop": "^5.1.5",
     "lodash.merge": "^4.6.2",
@@ -63,15 +74,12 @@
     "@storybook/manager-webpack4": "^6.5.6",
     "@storybook/react": "^6.5.6",
     "@storybook/testing-library": "^0.0.11",
+    "@swc/core": "^1.3.23",
     "@types/date-fns": "^2.6.0",
     "@types/react": "^18.0.9",
     "@types/react-day-picker": "^5.3.0",
     "@types/react-tagsinput": "^3.19.9",
     "@types/react-toastify": "^4.1.0",
-    "@types/styled-system": "^5.1.15",
-    "@types/styled-system__css": "^5.0.16",
-    "@types/styled-system__should-forward-prop": "^5.1.2",
-    "@types/tinycolor2": "^1.4.3",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.26.0",
     "date-fns": "^2.28.0",
@@ -100,7 +108,8 @@
     "rimraf": "^3.0.2",
     "styled-system": "^5.1.5",
     "tinycolor2": "^1.4.2",
-    "tscpaths": "https://github.com/skyeops/tscpaths.git",
+    "tscpaths": "https://github.com/sharply-africa/tscpaths.git",
+    "tsup": "^6.5.0",
     "typescript": "4.5.2"
   },
   "lint-staged": {
