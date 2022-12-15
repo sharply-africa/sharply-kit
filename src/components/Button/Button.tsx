@@ -6,7 +6,6 @@ import { ArrowRight } from 'src/components/Icons';
 import { Box, BoxProps } from 'src/components/Box';
 import { Spinner } from 'src/components/Spinner';
 import { IThemeFoundationSpace } from 'src/theme/theme';
-import { Children } from 'src/lib';
 
 const IconWrapper = styled(Box)<{ fill?: string }>`
   svg {
@@ -20,8 +19,8 @@ export interface ButtonProps extends BoxProps {
   isDisabled?: boolean;
   isFullWidth?: boolean;
   isLoading?: boolean;
-  leftIcon?: Children;
-  rightIcon?: Children;
+  leftIcon?: React.ReactNode | React.ReactNode[];
+  rightIcon?: React.ReactNode | React.ReactNode[];
   showArrowIcon?: boolean;
   textColor?: keyof IThemeFoundationSpace;
 }

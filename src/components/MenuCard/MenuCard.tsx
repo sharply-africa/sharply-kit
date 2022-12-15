@@ -4,10 +4,9 @@ import { Box, BoxProps } from 'src/components/Box';
 import { Text } from 'src/components/Text';
 import { Card } from 'src/components/Card';
 import { IThemeFoundationColors } from 'src/theme/theme';
-import { Children } from 'src/lib/utils';
 
 export interface MenuCardProps extends BoxProps {
-  icon?: Children;
+  icon?: React.ReactNode | React.ReactNode[];
   iconBg?: keyof IThemeFoundationColors;
   iconWrapperProps?: BoxProps;
   showArrow?: boolean;
