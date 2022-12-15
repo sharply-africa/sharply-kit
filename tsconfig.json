@@ -12,14 +12,13 @@
     "isolatedModules": true,
     "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "CommonJS",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "outDir": "dist",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": false,
-    "target": "es5",
     "paths": {
       "src/*": ["./src/*"]
     }
