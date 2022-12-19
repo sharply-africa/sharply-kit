@@ -1,7 +1,7 @@
-import defaltTheme from './theme';
+import defaltTheme, { ITheme } from './theme';
 
-export const extendTheme = (newTheme, oldTheme = defaltTheme) => {
-  const mergedTheme = {};
+export const extendTheme = (newTheme, oldTheme = defaltTheme): ITheme => {
+  const mergedTheme = {} as ITheme;
 
   for (const key in oldTheme) {
     if (oldTheme.hasOwnProperty(key)) {
