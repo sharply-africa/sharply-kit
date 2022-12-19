@@ -32,4 +32,4 @@ export type {
 } from './context/ThemeContext';
 export { default as useTheme } from './hooks/useTheme';
 export { default as useToast } from './hooks/useToast';
-export { default as theme } from './theme';
+export { default as theme, extendTheme } from './theme';
