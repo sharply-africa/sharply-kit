@@ -1,7 +1,7 @@
 {
   "name": "sharply-kit",
   "private": false,
-  "version": "1.9.3",
+  "version": "1.9.13-beta",
   "description": "Sharply africa web ui kit",
   "source": "./src/index.ts",
   "main": "./dist/index.js",
@@ -51,6 +51,7 @@
     "@types/styled-system__css": "^5.0.16",
     "@types/styled-system__should-forward-prop": "^5.1.2",
     "@types/tinycolor2": "^1.4.3",
+    "lodash.debounce": "^4.0.8",
     "styled-system": "^5.1.5",
     "tinycolor2": "^1.4.2"
   },
@@ -95,11 +96,9 @@
     "react": "^18.1.0",
     "react-day-picker": "7.4.10",
     "react-dom": "^18.1.0",
-    "react-google-autocomplete": "^2.7.0",
     "react-phone-input-2": "^2.15.0",
     "react-toastify": "^9.0.1",
     "rimraf": "^3.0.2",
-    "styled-system": "^5.1.5",
     "tinycolor2": "^1.4.2",
     "tsup": "^6.5.0",
     "typescript": "4.5.2"
