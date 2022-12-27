@@ -43,6 +43,10 @@ const ToastReset = () => {
           min-width: 27.5rem;
         }
 
+        .Toastify__toast-icon{
+          display: none;
+        }
+
         .Toastify__toast--error {
           background: #f49c9c;
           color: #DF1818;

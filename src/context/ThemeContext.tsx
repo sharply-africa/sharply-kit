@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Slide, ToastContainer } from 'react-toastify';
 import { ThemeProvider as EmotionThemeProvider } from '@emotion/react';
-import merge from 'lodash.merge';
 import CSSReset from 'src/resets/CSSReset';
 import ToastReset from 'src/resets/ToastReset';
 import defaultTheme, { ITheme } from 'src/theme';
@@ -16,7 +15,6 @@ export interface ThemeProviderProps {
 export interface ThemeContextProps {
   googleMapsKey: string;
   theme: ITheme;
-  updateTheme(theme: ITheme): void;
 }
 
 export const ThemeContext = React.createContext({} as ThemeContextProps);
@@ -28,25 +26,18 @@ const ThemeProvider = (props: ThemeProviderProps): JSX.Element => {
     resetCSS = true,
     theme = defaultTheme,
   } = props;
-  const [customTheme, setCustomTheme] = React.useState({ ...theme });
-
-  const updateTheme = React.useCallback(
-    (newTheme = {}) => setCustomTheme((v) => merge(v, newTheme)),
-    [],
-  );
 
   const value = React.useMemo(
     () => ({
       googleMapsKey,
-      theme: customTheme,
-      updateTheme,
+      theme: theme,
     }),
-    [customTheme, updateTheme, googleMapsKey],
+    [googleMapsKey, theme],
   );
 
   return (
     <ThemeContext.Provider value={value}>
-      <EmotionThemeProvider theme={customTheme}>
+      <EmotionThemeProvider theme={theme}>
         {resetCSS && <CSSReset />}
         {children}
         <ToastContainer
