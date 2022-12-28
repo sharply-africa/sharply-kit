@@ -3,10 +3,10 @@ import { Box, BoxProps } from 'src/components/Box';
 import { CaretDown } from 'src/components/Icons';
 import { useAccordion } from './AccordionContext';
 
-export type AccordionHeaderProps = BoxProps;
+export type AccordionHeaderProps = { icon?: any } & BoxProps;
 
 const AccordionHeader = forwardRef(
-  ({ children, ...props }: AccordionHeaderProps, ref) => {
+  ({ children, icon, ...props }: AccordionHeaderProps, ref) => {
     const { isOpen, toggleOpen } = useAccordion();
 
     return (
@@ -39,7 +39,7 @@ const AccordionHeader = forwardRef(
             transition: 'all 0.2s',
           }}
         >
-          <CaretDown />
+          {icon ?? <CaretDown />}
         </Box>
       </Box>
     );
