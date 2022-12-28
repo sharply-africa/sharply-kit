@@ -10,10 +10,13 @@ import useTheme from 'src/hooks/useTheme';
 import { mergeRefs } from 'src/lib';
 import { PhoneInputWrapper } from './StyledComponents';
 
-export interface InputProps
-  extends React.HTMLProps<HTMLInputElement>,
-    BoxProps {
+export interface InputProps extends Omit<BoxProps, 'value' | 'onChange'> {
+  type?: 'text' | 'password' | 'email' | 'phone' | 'address';
+  onChange?: (
+    event: React.FormEvent<HTMLInputElement> | google.maps.places.PlaceResult,
+  ) => void;
   placesOptions?: Record<string, any>;
+  [key: string]: any;
 }
 
 export type InputRef =
@@ -69,7 +72,7 @@ export const Input = forwardRef<InputRef, InputProps>(
     const hasSetDefaultValue = React.useRef(false);
     const { googleMapsKey } = useTheme();
 
-    const { ref: placesRef } = usePlacesWidget({
+    const { ref: placesRef } = usePlacesWidget<HTMLInputElement>({
       apiKey: googleMapsKey,
       onPlaceSelected: (location) => {
         if (placesRef?.current?.value) {
@@ -103,8 +106,9 @@ export const Input = forwardRef<InputRef, InputProps>(
         type === 'address' &&
         !hasSetDefaultValue.current
       ) {
-        placesRef.current.value = props.defaultValue;
-        getPlacePredictions({ input: props.defaultValue });
+        const defaultValue = props.defaultValue as string;
+        placesRef.current.value = defaultValue;
+        getPlacePredictions({ input: defaultValue });
         hasSetDefaultValue.current = true;
       }
     }, [getPlacePredictions, placesRef, props.defaultValue, type]);
@@ -132,7 +136,7 @@ export const Input = forwardRef<InputRef, InputProps>(
 
     if (type === 'phone') {
       return (
-        <PhoneInputWrapper ref={ref}>
+        <PhoneInputWrapper>
           <PhoneInput
             autoFormat
             country="ng"
