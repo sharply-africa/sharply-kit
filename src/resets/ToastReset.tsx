@@ -9,15 +9,19 @@ const getPropName = (prop: string) => {
 const getColor = (color: string) => {
   if (typeof window !== 'undefined' && color) {
     const root = document.querySelector(':root');
-    const rs = getComputedStyle(root);
-    const propName = getPropName(color);
-    const hexColor = color.startsWith('var')
-      ? rs.getPropertyValue(propName)
-      : color;
+    if (root) {
+      const rs = getComputedStyle(root);
+      const propName = getPropName(color);
+      const hexColor = color.startsWith('var')
+        ? rs.getPropertyValue(propName)
+        : color;
 
-    const newTinyColor = tinycolor(hexColor);
-    newTinyColor.lighten(30);
-    return { color, background: newTinyColor.toHexString() };
+      const newTinyColor = tinycolor(hexColor);
+      newTinyColor.lighten(30);
+      return { color, background: newTinyColor.toHexString() };
+    }
+
+    return { color, background: '' };
   }
   return { color, background: '' };
 };

@@ -48,6 +48,4 @@ const theme: ITheme = {
   variants,
 };
 
-export * from './utils';
-
 export default theme;

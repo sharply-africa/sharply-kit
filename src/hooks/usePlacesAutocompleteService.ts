@@ -12,6 +12,37 @@ import {
   loadGoogleMapScript,
 } from 'src/lib/google';
 
+interface UsePlacesAutocompleteServiceConfig {
+  apiKey?: string;
+  libraries?: string[];
+  googleMapsScriptBaseUrl?: string;
+  debounce?: number;
+  options?: Partial<google.maps.places.AutocompletionRequest>;
+  sessionToken?: boolean;
+  language?: string;
+}
+
+interface UsePlacesAutocompleteServiceResponse {
+  placesService: google.maps.places.PlacesService | null;
+  autocompleteSessionToken:
+    | google.maps.places.AutocompleteSessionToken
+    | undefined;
+  placesAutocompleteService: google.maps.places.AutocompleteService | null;
+  placePredictions: google.maps.places.AutocompletePrediction[];
+  isPlacePredictionsLoading: boolean;
+  getPlacePredictions: (opt: google.maps.places.AutocompletionRequest) => void;
+  queryPredictions: google.maps.places.QueryAutocompletePrediction[];
+  isQueryPredictionsLoading: boolean;
+  getQueryPredictions: (
+    opt: google.maps.places.QueryAutocompletionRequest,
+  ) => void;
+  refreshSessionToken: () => void;
+}
+
+export default function usePlacesAutocompleteService(
+  options: UsePlacesAutocompleteServiceConfig,
+): UsePlacesAutocompleteServiceResponse;
+
 export default function usePlacesAutocompleteService({
   apiKey,
   libraries = 'places',
@@ -20,7 +51,7 @@ export default function usePlacesAutocompleteService({
   options = {},
   sessionToken,
   language,
-}) {
+}: UsePlacesAutocompleteServiceConfig): UsePlacesAutocompleteServiceResponse {
   const languageQueryParam = language ? `&language=${language}` : '';
   const googleMapsScriptUrl = `${googleMapsScriptBaseUrl}?key=${apiKey}&libraries=${libraries}${languageQueryParam}`;
   const [placePredictions, setPlacePredictions] = useState([]);
