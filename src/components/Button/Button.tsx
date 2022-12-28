@@ -13,7 +13,7 @@ const IconWrapper = styled(Box)<{ fill?: string }>`
   }
 `;
 
-export interface ButtonProps extends BoxProps {
+export type ButtonProps = {
   colorScheme?: keyof IThemeFoundationSpace;
   iconSpacing?: number;
   isDisabled?: boolean;
@@ -23,7 +23,8 @@ export interface ButtonProps extends BoxProps {
   rightIcon?: React.ReactNode | React.ReactNode[];
   showArrowIcon?: boolean;
   textColor?: keyof IThemeFoundationSpace;
-}
+} & BoxProps &
+  React.ComponentPropsWithoutRef<'button'>;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
