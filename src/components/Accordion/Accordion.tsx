@@ -11,19 +11,27 @@ import { AccordionContext } from './AccordionContext';
 import AccordionHeader from './AccordionHeader';
 import AccordionContent from './AccordionContent';
 
-export interface AccordionProps extends BoxProps {
+export interface AccordionComponentProps extends BoxProps {
   initialOpen?: boolean;
   onChange?: (v: any) => void;
 }
 
-const AccordionComponent = forwardRef(
+export interface AccordionProps
+  extends Omit<typeof AccordionComponent, 'Header' | 'Content'> {
+  Header: typeof AccordionHeader;
+  Content: typeof AccordionContent;
+}
+
+const AccordionComponent: React.ForwardRefExoticComponent<
+  AccordionComponentProps & React.RefAttributes<HTMLDivElement>
+> = forwardRef(
   (
     {
       children,
       initialOpen = false,
       onChange = () => {},
       ...rest
-    }: AccordionProps,
+    }: AccordionComponentProps,
     ref,
   ) => {
     const [isOpen, setIsOpen] = useState(initialOpen);
@@ -70,7 +78,7 @@ const AccordionComponent = forwardRef(
   },
 );
 
-const Accordion = Object.assign(AccordionComponent, {
+const Accordion: AccordionProps = Object.assign(AccordionComponent, {
   Header: AccordionHeader,
   Content: AccordionContent,
 });
