@@ -42,13 +42,11 @@ const Pagination = forwardRef(
             py="0.9rem"
             value={page}
           >
-            {[...Array(total + 1).keys()]
-              .filter((x) => x > 0)
-              .map((x) => (
-                <option key={x} value={x}>
-                  {x}
-                </option>
-              ))}
+            {Array.from({ length: total }, (_, i) => i + 1).map((x) => (
+              <option key={x} value={x}>
+                {x}
+              </option>
+            ))}
           </Select>
 
           <Text flexShrink={0}>of {total}</Text>
