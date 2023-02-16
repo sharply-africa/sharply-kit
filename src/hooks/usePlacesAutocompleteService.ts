@@ -20,6 +20,13 @@ interface UsePlacesAutocompleteServiceConfig {
   options?: Partial<google.maps.places.AutocompletionRequest>;
   sessionToken?: boolean;
   language?: string;
+
+  onPlacePredictionsChanged?: (
+    predictions: google.maps.places.AutocompletePrediction[],
+  ) => void;
+  onQueryPredictionsChanged?: (
+    predictions: google.maps.places.QueryAutocompletePrediction[],
+  ) => void;
 }
 
 interface UsePlacesAutocompleteServiceResponse {
@@ -45,12 +52,14 @@ export default function usePlacesAutocompleteService(
 
 export default function usePlacesAutocompleteService({
   apiKey,
-  libraries = 'places',
-  googleMapsScriptBaseUrl = GOOGLE_MAP_SCRIPT_BASE_URL,
   debounce = 300,
+  googleMapsScriptBaseUrl = GOOGLE_MAP_SCRIPT_BASE_URL,
+  language,
+  libraries = 'places',
+  onPlacePredictionsChanged,
+  onQueryPredictionsChanged,
   options = {},
   sessionToken,
-  language,
 }: UsePlacesAutocompleteServiceConfig): UsePlacesAutocompleteServiceResponse {
   const languageQueryParam = language ? `&language=${language}` : '';
   const googleMapsScriptUrl = `${googleMapsScriptBaseUrl}?key=${apiKey}&libraries=${libraries}${languageQueryParam}`;
@@ -82,6 +91,7 @@ export default function usePlacesAutocompleteService({
           (r) => {
             setIsPlacePredsLoading(false);
             setPlacePredictions(r || []);
+            onPlacePredictionsChanged?.(r || []);
           },
         );
     }, debounce),
@@ -102,6 +112,7 @@ export default function usePlacesAutocompleteService({
           (r) => {
             setIsQueryPredsLoading(false);
             setQueryPredictions(r || []);
+            onQueryPredictionsChanged?.(r || []);
           },
         );
     }, debounce),

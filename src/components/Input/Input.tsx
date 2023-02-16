@@ -87,18 +87,33 @@ export const Input = forwardRef<InputRef, InputProps>(
       },
     });
 
-    const {
-      placePredictions,
-      getPlacePredictions,
-      placesService,
-      isPlacePredictionsLoading,
-    } = usePlacesAutocompleteService({
-      apiKey: googleMapsKey,
-      options: {
-        types: ['address'],
-        componentRestrictions: { country: 'ng' },
+    const { getPlacePredictions, placesService } = usePlacesAutocompleteService(
+      {
+        apiKey: googleMapsKey,
+        options: {
+          types: ['address'],
+          componentRestrictions: { country: 'ng' },
+        },
+        onPlacePredictionsChanged: (predictions) => {
+          if (predictions?.length) {
+            // eslint-disable-next-line @typescript-eslint/naming-convention
+            const { place_id } = predictions[0];
+            placesService?.getDetails(
+              { placeId: place_id, fields: AUTOCOMPLETE_FIELDS },
+              (place) => {
+                onChange(place);
+                hasSetDefaultValue.current = false;
+              },
+            );
+            const { description } = predictions[0];
+            placesRef.current.value = description;
+          } else {
+            onChange(null);
+            hasSetDefaultValue.current = false;
+          }
+        },
       },
-    });
+    );
 
     React.useEffect(() => {
       if (
@@ -112,21 +127,6 @@ export const Input = forwardRef<InputRef, InputProps>(
         hasSetDefaultValue.current = true;
       }
     }, [getPlacePredictions, placesRef, props.defaultValue, type]);
-
-    React.useEffect(() => {
-      if (!isPlacePredictionsLoading && placePredictions.length) {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        const { place_id } = placePredictions[0];
-
-        placesService?.getDetails(
-          { placeId: place_id, fields: AUTOCOMPLETE_FIELDS },
-          (place) => {
-            onChange(place);
-            hasSetDefaultValue.current = false;
-          },
-        );
-      }
-    }, [isPlacePredictionsLoading, placePredictions, placesService, onChange]);
 
     React.useEffect(() => {
       if (!value && placesRef?.current) {
