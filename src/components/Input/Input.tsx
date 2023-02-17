@@ -9,6 +9,9 @@ import { Box, BoxProps } from 'src/components/Box';
 import useTheme from 'src/hooks/useTheme';
 import { mergeRefs } from 'src/lib';
 import { PhoneInputWrapper } from './StyledComponents';
+import InputGroup from './InputGroup';
+import { Eye, EyeHide } from '../Icons';
+import InputAddon from './InputAddon';
 
 export interface InputProps extends Omit<BoxProps, 'value' | 'onChange'> {
   type?: 'text' | 'password' | 'email' | 'phone' | 'address';
@@ -70,6 +73,7 @@ const AUTOCOMPLETE_FIELDS = ['geometry.location', 'formatted_address'];
 export const Input = forwardRef<InputRef, InputProps>(
   ({ onChange, type, value, placesOptions, ...props }, ref) => {
     const hasSetDefaultValue = React.useRef(false);
+    const [hide, setHide] = React.useState<boolean>(true);
     const { googleMapsKey } = useTheme();
 
     const { ref: placesRef } = usePlacesWidget<HTMLInputElement>({
@@ -163,6 +167,26 @@ export const Input = forwardRef<InputRef, InputProps>(
             }
           }}
         />
+      );
+    }
+
+    if (type === 'password') {
+      const toggleEye = () => setHide((v) => !v);
+      return (
+        <InputGroup>
+          <InputComponent
+            onChange={onChange}
+            placeholder="Your password"
+            ref={ref}
+            type={hide ? 'password' : 'text'}
+            value={value}
+            {...props}
+          />
+
+          <InputAddon onClick={toggleEye} sx={{ cursor: 'pointer' }}>
+            {hide ? <Eye /> : <EyeHide />}
+          </InputAddon>
+        </InputGroup>
       );
     }
 

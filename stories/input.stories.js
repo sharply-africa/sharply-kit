@@ -12,7 +12,8 @@ const Template = (args) => (
 export const Input = Template.bind({});
 
 Input.args = {
-  disabled: true,
+  disabled: false,
   onChange: console.log,
   onBlur: console.log,
+  type: 'text',
 };
