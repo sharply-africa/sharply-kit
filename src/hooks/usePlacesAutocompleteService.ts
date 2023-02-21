@@ -4,7 +4,7 @@
 
 // Source: https://github.com/ErrorPro/react-google-autocomplete/blob/master/src/usePlacesAutocompleteService.js
 
-import { useEffect, useCallback, useRef, useState } from 'react';
+import { useEffect, useCallback, useRef, useState, RefObject } from 'react';
 import debounceFn from 'lodash.debounce';
 import {
   GOOGLE_MAP_SCRIPT_BASE_URL,
@@ -20,7 +20,6 @@ interface UsePlacesAutocompleteServiceConfig {
   options?: Partial<google.maps.places.AutocompletionRequest>;
   sessionToken?: boolean;
   language?: string;
-
   onPlacePredictionsChanged?: (
     predictions: google.maps.places.AutocompletePrediction[],
   ) => void;
@@ -30,11 +29,11 @@ interface UsePlacesAutocompleteServiceConfig {
 }
 
 interface UsePlacesAutocompleteServiceResponse {
-  placesService: google.maps.places.PlacesService | null;
-  autocompleteSessionToken:
-    | google.maps.places.AutocompleteSessionToken
-    | undefined;
-  placesAutocompleteService: google.maps.places.AutocompleteService | null;
+  placesService: RefObject<google.maps.places.PlacesService | null>;
+  autocompleteSessionToken: RefObject<
+    google.maps.places.AutocompleteSessionToken | undefined
+  >;
+  placesAutocompleteService: RefObject<google.maps.places.AutocompleteService | null>;
   placePredictions: google.maps.places.AutocompletePrediction[];
   isPlacePredictionsLoading: boolean;
   getPlacePredictions: (opt: google.maps.places.AutocompletionRequest) => void;
@@ -124,10 +123,11 @@ export default function usePlacesAutocompleteService({
 
     const buildService = () => {
       // eslint-disable-next-line no-undef
-      if (!google)
+      if (!google) {
         return console.error(
           'Google has not been found. Make sure your provide apiKey prop.',
         );
+      }
 
       // eslint-disable-next-line no-undef
       placesAutocompleteService.current =
@@ -138,9 +138,10 @@ export default function usePlacesAutocompleteService({
         document.createElement('div'),
       );
 
-      if (sessionToken)
+      if (sessionToken) {
         autocompleteSession.current =
           new google.maps.places.AutocompleteSessionToken();
+      }
     };
 
     if (apiKey) {
@@ -151,9 +152,9 @@ export default function usePlacesAutocompleteService({
   }, []);
 
   return {
-    placesService: placesService.current,
-    autocompleteSessionToken: autocompleteSession.current,
-    placesAutocompleteService: placesAutocompleteService.current,
+    placesService: placesService,
+    autocompleteSessionToken: autocompleteSession,
+    placesAutocompleteService: placesAutocompleteService,
     placePredictions: placeInputValue ? placePredictions : [],
     isPlacePredictionsLoading: isPlacePredsLoading,
     getPlacePredictions: (opt) => {

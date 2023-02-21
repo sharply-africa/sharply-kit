@@ -102,7 +102,7 @@ export const Input = forwardRef<InputRef, InputProps>(
           if (predictions?.length) {
             // eslint-disable-next-line @typescript-eslint/naming-convention
             const { place_id } = predictions[0];
-            placesService?.getDetails(
+            placesService?.current?.getDetails(
               { placeId: place_id, fields: AUTOCOMPLETE_FIELDS },
               (place) => {
                 onChange(place);
