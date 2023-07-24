@@ -10,6 +10,7 @@ import { Stack } from 'src/components/Stack';
 import { Text } from 'src/components/Text';
 import useClickAway from 'src/hooks/useClickAway';
 import useToggle from 'src/hooks/useToggle';
+import { capitalizeString } from 'src/lib';
 import { CaretDown } from '../Icons';
 
 export type PricePickerProps = {
@@ -118,7 +119,10 @@ const PricePicker = ({
               <Box>
                 <Text color="heading">{price?.from?.name}</Text>
                 <Text color="heading" fontSize="xxs">
-                  {price?.from?.coverage}
+                  {price?.from?.lgas
+                    .map((i) => i.cities.map((city) => capitalizeString(city)))
+                    .flat()
+                    .join(',  ')}
                 </Text>
               </Box>
 
@@ -129,14 +133,12 @@ const PricePicker = ({
               <Box>
                 <Text color="heading">{price?.to?.name}</Text>
                 <Text color="heading" fontSize="xxs">
-                  {price?.to?.coverage}
+                  {price?.to?.lgas
+                    .map((i) => i.cities.map((city) => capitalizeString(city)))
+                    .flat()
+                    .join(',  ')}
                 </Text>
               </Box>
-
-              <Text fontWeight="medium" color="heading">
-                {price?.name}
-              </Text>
-              <Text fontSize="xs">{price?.coverage}</Text>
             </Box>
           ))}
         </Stack>
