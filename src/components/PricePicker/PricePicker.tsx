@@ -126,7 +126,7 @@ const PricePicker = ({
                 </Text>
               </Box>
 
-              <Box pt={5}>
+              <Box alignSelf="center">
                 <Box width="13px" height="1px" backgroundColor="heading" />
               </Box>
 
